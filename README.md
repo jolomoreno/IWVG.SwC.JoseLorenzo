@@ -7,10 +7,10 @@
 * Maven
 * IntelliJ
 * GitHub
+* Travis
+* Sonarcloud
 
 ### Descripción
-Este proyecto pretende ser una plantilla maven para crear un proyecto
-1.- Descomprimir en la carpeta de trabajo
-1.- Editar el pom.xml y cambiarle el nombre del proyecto
-1.- Desde IntelliJ, `Import Project`, marcar `Create Project from external model` y elegir `Maven`
+Repositorio que alberga el proyecto para la práctica colaborativa de la asignatura de IWVG de la UPM.
+
 
