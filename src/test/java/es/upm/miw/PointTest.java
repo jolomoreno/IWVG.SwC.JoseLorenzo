@@ -49,5 +49,4 @@ class PointTest {
         assertEquals(1, point.getX());
         assertEquals(2, point.getY());
     }
-
 }

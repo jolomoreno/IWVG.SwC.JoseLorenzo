@@ -41,5 +41,4 @@ public class User {
     public String toUpperCase() {
         return this.getName().toUpperCase();
     }
-
 }
