@@ -28,4 +28,9 @@ class FractionTest {
     void testGetDenominator() {
         assertEquals(4, fraction.getDenominator());
     }
+    @Test
+    void testEsEquivalente() {
+        assertEquals(false, fraction.isEquivalent(12,4));
+        assertEquals(true, fraction.isEquivalent(3,12));
+    }
 }
