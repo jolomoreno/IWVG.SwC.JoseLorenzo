@@ -1,9 +1,12 @@
 package es.upm.miw;
 
+import org.apache.logging.log4j.LogManager;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class FractionTest {
@@ -44,4 +47,17 @@ class FractionTest {
     void testIsImpropia() {
         assertTrue(new Fraction(5, 2).isImpropia());
     }
+
+    @Test
+    void testMultiplicar() {
+        Assertions.assertEquals(new Fraction(8, 48).getNumerator(), fraction.multiplicar(new Fraction(8, 12)).getNumerator());
+        Assertions.assertEquals(new Fraction(8, 48).getDenominator(), fraction.multiplicar(new Fraction(8, 12)).getDenominator());
+    }
+
+    @Test
+    void testMultiplicarArithmeticExceptionIfDivisionCero() {
+        ArithmeticException exception = Assertions.assertThrows(ArithmeticException.class, () -> fraction.multiplicar(new Fraction(8, 0)));
+        LogManager.getLogger(this.getClass()).debug(exception.getMessage());
+    }
+
 }
