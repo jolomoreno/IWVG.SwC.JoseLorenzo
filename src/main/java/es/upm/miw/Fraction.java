@@ -34,4 +34,15 @@ public class Fraction {
     public boolean isImpropia() {
         return !this.isPropia();
     }
+
+    public Fraction multiplicar(Fraction multiplicando) throws ArithmeticException{
+        assert multiplicando != null;
+        if (Integer.compare(0, multiplicando.getDenominator()) == 0 || Integer.compare(0, this.getDenominator()) == 0) {
+            throw new ArithmeticException("An integer divide by zero");
+        } else {
+            int newNumerator = this.getNumerator() * multiplicando.getNumerator();
+            int newDenominator = this.getDenominator() * multiplicando.getDenominator();
+            return new Fraction(newNumerator, newDenominator);
+        }
+    }
 }
