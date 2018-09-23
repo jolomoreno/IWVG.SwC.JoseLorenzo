@@ -16,6 +16,11 @@ class FractionTest {
     }
 
     @Test
+    void testConstructor() {
+        assertEquals(1, new Fraction().decimal());
+    }
+
+    @Test
     void testDecimal() {
         assertEquals(0.25, fraction.decimal(), 10e-3);
     }
