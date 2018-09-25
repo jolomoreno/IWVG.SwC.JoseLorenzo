@@ -54,7 +54,8 @@ public class Fraction {
     }
 
     public boolean isEquivalent(int parametro_nume, int parametro_denom){
-        return this.numerator * parametro_denom == this.denominator * parametro_nume;
+        boolean resultado = this.numerator * parametro_denom == this.denominator * parametro_nume;
+        return resultado;
     }
 
 }
