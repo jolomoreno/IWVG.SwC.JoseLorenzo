@@ -60,4 +60,9 @@ class FractionTest {
         LogManager.getLogger(this.getClass()).debug(exception.getMessage());
     }
 
+    @Test
+    void testEsEquivalente() {
+        assertEquals(false, fraction.isEquivalent(12,4));
+        assertEquals(true, fraction.isEquivalent(3,12));
+    }
 }

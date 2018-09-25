@@ -27,6 +27,7 @@ public class Fraction {
         return denominator;
     }
 
+
     public boolean isPropia() {
         return this.numerator < this.denominator;
     }
@@ -45,4 +46,10 @@ public class Fraction {
             return new Fraction(newNumerator, newDenominator);
         }
     }
+
+    public boolean isEquivalent(int parametro_nume, int parametro_denom){
+        boolean resultado = this.numerator * parametro_denom == this.denominator * parametro_nume;
+        return resultado;
+    }
+
 }
