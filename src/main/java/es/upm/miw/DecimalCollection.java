@@ -5,6 +5,8 @@ import java.util.List;
 
 public class DecimalCollection {
 
+    private static String EMPTY_COLLECTION_MSG = "Empty collection";
+
     private List<Double> collection;
 
     public DecimalCollection() {
@@ -22,24 +24,15 @@ public class DecimalCollection {
     public double sum() {
         assert collection != null;
         if (this.collection.isEmpty()) {
-            throw new ArithmeticException("Empty collection");
+            throw new ArithmeticException(EMPTY_COLLECTION_MSG);
         }
-        /*
-        double sum = 0;
-        for (double item : this.collection) {
-            sum += item;
-        }
-        return sum;
-        */
-        // return this.collection.stream().mapToDouble(value -> value).sum();
         return this.collection.stream().mapToDouble(Double::doubleValue).sum();
-
     }
 
     public double higher() {
         assert collection != null;
         if (this.collection.isEmpty()) {
-            throw new ArithmeticException("Empty collection");
+            throw new ArithmeticException(EMPTY_COLLECTION_MSG);
         }
         double higher = Double.NEGATIVE_INFINITY;
         for (double item : this.collection) {
@@ -50,4 +43,17 @@ public class DecimalCollection {
         return higher;
     }
 
+    public double lower() {
+        assert collection != null;
+        if (this.collection.isEmpty()) {
+            throw new ArithmeticException(EMPTY_COLLECTION_MSG);
+        }
+        double lower = 0;
+        for (double item : this.collection) {
+            if (item < lower) {
+                lower = item;
+            }
+        }
+        return lower;
+    }
 }
